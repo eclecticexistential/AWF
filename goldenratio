@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<!-- photo by Nick Brandt -->
+
+        <style>
+            html { 
+            background: url(https://urbanfragment.files.wordpress.com/2012/10/female-lion-stalking-grayscale-monochrome.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+            }
+            
+            .getdown{
+                      display: block;
+                      text-decoration: none;
+                      font-size: 24px;
+                      color: white;
+                      font-family: montserrat;
+                      }
+              a{
+                    margin: 0% -35% 0% 46%;
+                      bottom: 0px;
+                  color: white;
+                  font-size: 26px;                  
+                      position: absolute;
+                      text-shadow: 2px 2px 0.3px #000000;
+                  }
+                  #Y a:hover{
+                      color: black;
+                      text-decoration: none;
+                  }
+
+
+          </style>
+
+
+<!-- goldenratio = width available/1.618. # given, minus original, = sidebar to content ratio -->
+<!-- there a way to magnitize the top part of a section to the bottom part of a static menu? -->
+
+      <body>
+            <div class="getdown";><span title="African Wildlife Foundation"><p id="Y";><a href="https://www.awf.org/donate";>DONATE</a></p></span>
+              </div>
