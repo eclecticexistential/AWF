@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="eng">
+<style>
+  
+            html { 
+            background: url(http://www.texturex.com/albums/Stone-Textures/Stone%20Texture%20wall%20large%20rock%20grey%20image.jpg) no-repeat center center fixed;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+                  }
+          div1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(255,255,255, 0.5);
+          }
+
+h1{
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 8px #000000;
+  background-color: #006400;
+  top: 0;
+}
+  }
+
+          </style>
+
+            <div1>
+<h1 style="font-size: 72px;">Rock the building block!</h1>
+            </div1>

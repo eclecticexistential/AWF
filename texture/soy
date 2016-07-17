@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="eng">
+<style>
+  
+            div { 
+            background: url(http://www.texturex.com/albums/Stone-Textures/Stone%20Texture%20wall%20large%20rock%20grey%20image.jpg) no-repeat center center fixed;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+                  }
+
+          </style>
+          <div></div>
