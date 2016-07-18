@@ -37,18 +37,32 @@ h1{
         .word{
         display: block;
         text-align: center;
+        text-color: #212121;
       }
+        .nice{
+          display: block;
+          width: 100%;
+          height: 10px;
+          background-color: purple;
+          cursor: pointer;
+        }
+        .nice:hover, .nice:focus{
+          background-color: #3E8E41;
+        }
+
+        
 <!-- adding the fixed position made the menu align left, adding width 100%, rather than auto, corrected this, DO NOT PUT INFO AFTER THIS NOTE, IT WILL NOT WORK -->
 
 
 
           </style>
-
+              <body style="cursor: default;">
             <div class="evo">
 <h1 style="font-size: 72px;">Rock the building block!</h1>
             </div1>
             <br></br>
             <br></br>
+            <hr class="nice"></hr>
     <h3 class="word">Better late than never, but never late's much better.</h3>
     <div>
     <p>Do sway honshin formidably as the days rightfully pass</p>
@@ -58,3 +72,4 @@ h1{
     <p>Hindsight's there for a reason, memories forgotten burn through</p>
     <p>Sticking themselves like adhesion, transforming the self into someone new.</p>
   </div>
+    </body>
