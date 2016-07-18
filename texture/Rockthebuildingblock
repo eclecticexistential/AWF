@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="eng">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  </head>
 <style>
   
             html { 
@@ -38,6 +41,8 @@ h1{
         display: block;
         text-align: center;
         text-color: #212121;
+        
+  font-family: 'Lora', serif;
       }
         .nice{
           display: block;
