@@ -15,7 +15,7 @@
             background-size: cover;
 
                   }
-          div1{
+          .evo{
             position: absolute;
             top: 0;
             left: 0;
@@ -33,12 +33,28 @@ h1{
   width: 100%;
   position: fixed;
   word-spacing: 30px;
-}
-<-- adding the fixed position made the menu align left, adding width 100%, rather than auto, corrected this -->
-  
+} 
+        .word{
+        display: block;
+        text-align: center;
+      }
+<!-- adding the fixed position made the menu align left, adding width 100%, rather than auto, corrected this, DO NOT PUT INFO AFTER THIS NOTE, IT WILL NOT WORK -->
+
+
 
           </style>
 
-            <div1>
+            <div class="evo">
 <h1 style="font-size: 72px;">Rock the building block!</h1>
             </div1>
+            <br></br>
+            <br></br>
+    <h3 class="word">Better late than never, but never late's much better.</h3>
+    <div>
+    <p>Do sway honshin formidably as the days rightfully pass</p>
+    <p>Bringing new fortunes curiously as we stare through the looking glass</p>
+    <p>Supple information leaks, creating every tomorrow's past</p>
+    <p>Truth need be what we seek, a better yesterday at last</p>
+    <p>Hindsight's there for a reason, memories forgotten burn through</p>
+    <p>Sticking themselves like adhesion, transforming the self into someone new.</p>
+  </div>
