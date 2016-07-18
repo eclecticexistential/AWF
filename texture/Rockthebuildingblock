@@ -41,8 +41,8 @@ h1{
         display: block;
         text-align: center;
         text-color: #212121;
-        
-  font-family: 'Lora', serif;
+        font-size: 24px;         
+        font-family: 'Lora', serif;
       }
         .nice{
           display: block;
@@ -53,6 +53,15 @@ h1{
         }
         .nice:hover, .nice:focus{
           background-color: #3E8E41;
+        }
+        [class*='col-']{
+
+        }
+        .col-xs-1{ display: inline-flex;
+          width:13.2%;
+          margin: 20px;
+          font-size: 14px;
+          font-family: montserrat;
         }
 
         
@@ -70,11 +79,11 @@ h1{
             <hr class="nice"></hr>
     <h3 class="word">Better late than never, but never late's much better.</h3>
     <div>
-    <p>Do sway honshin formidably as the days rightfully pass</p>
-    <p>Bringing new fortunes curiously as we stare through the looking glass</p>
-    <p>Supple information leaks, creating every tomorrow's past</p>
-    <p>Truth need be what we seek, a better yesterday at last</p>
-    <p>Hindsight's there for a reason, memories forgotten burn through</p>
-    <p>Sticking themselves like adhesion, transforming the self into someone new.</p>
+    <p class= "col-xs-1">Do sway honshin formidably as the days rightfully pass</p>
+    <p class= "col-xs-1">Bringing new fortunes curiously as we stare through the looking glass</p>
+    <p class= "col-xs-1">Supple information leaks, creating every tomorrow's past</p>
+    <p class= "col-xs-1">Truth need be what we seek, a better yesterday at last</p>
+    <p class= "col-xs-1">Hindsight's there for a reason, memories forgotten burn through</p>
+    <p class= "col-xs-1">Sticking themselves like adhesion, transforming the self into someone new.</p>
   </div>
     </body>
