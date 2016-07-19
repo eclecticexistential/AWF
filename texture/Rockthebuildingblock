@@ -17,7 +17,6 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-
                   }
           .evo{
             position: absolute;
@@ -27,32 +26,7 @@
             right: 0;
             background: rgba(255,255,255, 0.5);
           }
-            .try{
 
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    -moz-background-clip:padding-box !important;
-    -webkit-background-clip:padding-box !important;
-    background-clip:padding-box !important;
-            }
-h1{
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px 8px #000000;
-  background-color: #006400;
-  margin-top: 0px;
-  width: 100%;
-  position: fixed;
-  word-spacing: 30px;
-} 
-        .word{
-        display: block;
-        text-align: center;
-        text-color: #212121;
-        font-size: 24px;         
-        font-family: 'Lora', serif;
-      }
         .nice{
           display: block;
           width: 100%;
@@ -63,36 +37,116 @@ h1{
         .nice:hover, .nice:focus{
           background-color: #3E8E41;
         }
-        [class*='col-']{ display: inline-flex;
-          max-width: 300px;
-          margin: 15px;
-          font-size: 14px;
-          font-family: montserrat;
-        }
-        .row{
-          padding: 15px;
-        }
+.container,
+  .row{
+    display:block;
+    overflow: hidden;
+  }
 
+  .container{
+    margin: 0 auto;
+  }
+
+  .row{
+    margin-bottom: 15px;
+  }
+
+  [class*="span"]{
+    float:left;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #111;
+    color: #FFF;
+    border: 3px solid #FFF;
+    text-align: center;
+  }
+
+@media screen and (min-width: 180px){
+  .container(width:160px;)
+}
+
+@media screen and (min-width: 360px){
+  .container(width:340px;)
+}
+
+@media screen and (min-width: 480px){
+  .container(width:460px;)
+}
+@media screen and (min-width: 560px){
+  .container(width:540px;)
+}
+
+@media screen and (min-width: 768px){
+  .container(width:750px;)
+}
+@media screen and (min-width: 992px){
+  .container(width:970px;)
+}
+@media screen and (min-width: 1200px){
+  .container(width:1170px;)
+}
+@media screen and (max-width: 180px){
+  [class*="span"]{
+    width: 100%;
+    float: none;
+  }
+}
+
+.span2{
+  width: 16.66666%;
+}
+.span5{
+  width: 41.66666%;
+  background: purple;
+  margin-left: 29%;
+  margin-right: 40%;
+}
+.span12{
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px 8px #000000;
+  background-color: #006400;
+  margin-top: 0px;
+  position: fixed;
+  word-spacing: 30px;
+  border: none;
+}
         
 <!-- adding the fixed position made the menu align left, adding width 100%, rather than auto, corrected this, DO NOT PUT INFO AFTER THIS NOTE, IT WILL NOT WORK -->
 
 
 
           </style>
-              <body class="try" style="cursor: default;">
+              <body style="cursor: default;">
             <div class="evo">
-<h1 style="font-size: 72px;">Rock the building block!</h1>
-            </div1>
+            <div class="row">
+<h1 class="span12">Rock the building block!</h1>
+            </div>
+            </div>
+            </div>
             <br></br>
             <br></br>
-            <hr class="nice"></hr>
-    <h3 class="word">Better late than never, but never late's much better.</h3>
-    <div>
-    <p class= "col-, row">Do sway honshin formidably as the days rightfully pass</p>
-    <p class= "col-, row">Bringing new fortunes curiously as we stare through the looking glass</p>
-    <p class= "col-, row">Supple information leaks, creating every tomorrow's past</p>
-    <p class= "col-, row">Truth need be what we seek, a better yesterday at last</p>
-    <p class= "col-, row">Hindsight's there for a reason, memories forgotten burn through</p>
-    <p class= "col-, row">Sticking themselves like adhesion, transforming the self into someone new.</p>
+            <br></br>
+    <div class="row">
+    <div class="span5">Better late than never, but never late's much better.</div>
+    </div>
+    </div>
+    </div>
+    <br></br>
+    <br></br>
+  <div class="row">
+    <div class="span2">
+      <p>Do sway honshin formidably as the days rightfully pass</p></div>      
+    <div class="span2">
+      <p>Bringing new fortunes curiously as we stare through the looking glass</p></div>      
+    <div class="span2">
+      <p>Supple information leaks, creating every tomorrow's past</p></div>      
+    <div class="span2">  
+      <p>Truth need be what we seek, a better yesterday at last</p></div>      
+    <div class="span2">    
+      <p>Hindsight's there for a reason, memories forgotten burn through</p></div>      
+    <div class="span2">
+      <p>Sticking themselves like adhesion, transforming the self into someone new.</p>
+    </div>
   </div>
     </body>
