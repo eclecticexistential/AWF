@@ -2,6 +2,7 @@
 <html lang="eng">
 <head>
   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
   </head>
 <style>
   
@@ -26,7 +27,15 @@
             right: 0;
             background: rgba(255,255,255, 0.5);
           }
+            .try{
 
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+            }
 h1{
   text-align: center;
   color: white;
@@ -54,14 +63,14 @@ h1{
         .nice:hover, .nice:focus{
           background-color: #3E8E41;
         }
-        [class*='col-']{
-
-        }
-        .col-xs-1{ display: inline-flex;
-          width:13.2%;
-          margin: 20px;
+        [class*='col-']{ display: inline-flex;
+          max-width: 300px;
+          margin: 15px;
           font-size: 14px;
           font-family: montserrat;
+        }
+        .row{
+          padding: 15px;
         }
 
         
@@ -70,7 +79,7 @@ h1{
 
 
           </style>
-              <body style="cursor: default;">
+              <body class="try" style="cursor: default;">
             <div class="evo">
 <h1 style="font-size: 72px;">Rock the building block!</h1>
             </div1>
@@ -79,11 +88,11 @@ h1{
             <hr class="nice"></hr>
     <h3 class="word">Better late than never, but never late's much better.</h3>
     <div>
-    <p class= "col-xs-1">Do sway honshin formidably as the days rightfully pass</p>
-    <p class= "col-xs-1">Bringing new fortunes curiously as we stare through the looking glass</p>
-    <p class= "col-xs-1">Supple information leaks, creating every tomorrow's past</p>
-    <p class= "col-xs-1">Truth need be what we seek, a better yesterday at last</p>
-    <p class= "col-xs-1">Hindsight's there for a reason, memories forgotten burn through</p>
-    <p class= "col-xs-1">Sticking themselves like adhesion, transforming the self into someone new.</p>
+    <p class= "col-, row">Do sway honshin formidably as the days rightfully pass</p>
+    <p class= "col-, row">Bringing new fortunes curiously as we stare through the looking glass</p>
+    <p class= "col-, row">Supple information leaks, creating every tomorrow's past</p>
+    <p class= "col-, row">Truth need be what we seek, a better yesterday at last</p>
+    <p class= "col-, row">Hindsight's there for a reason, memories forgotten burn through</p>
+    <p class= "col-, row">Sticking themselves like adhesion, transforming the self into someone new.</p>
   </div>
     </body>
