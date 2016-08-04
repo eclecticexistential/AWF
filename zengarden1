@@ -1,0 +1,46 @@
+body{
+  background: url("https://www.soulfularogya.com/wp-content/uploads/Zen-Stories-That-Will-Ease-Your-Soul.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+#zen-intro h1{
+margin: -8px;
+padding: 10px;
+font-size: 72px;
+text-align: center;
+color: #CCC;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px #FFF;
+}
+#zen-intro h2, #zen-summary, #zen-preamble{
+  background-color: rgb(220,220,220);
+  background-color: rgba(220,220,220,0.3);
+  padding: 4px 15px;
+  width: 40%;
+}
+#zen-intro h2{
+  margin-top: 5%;
+}
+#zen-summary{
+  margin-top: -20px;
+}
+a{color: #149;
+  text-decoration: none;
+}
+#zen-supporting{
+  float: left;
+  text-align: right;
+  width: 40%;
+}
+#zen-requirements{
+  background-color: rgb(220,220,220);
+  background-color: rgba(220,220,220,0.3);
+}
+.sidebar{display: inline-block;
+width: 15%;
+margin-top: -30%;
+float: right;
+}
