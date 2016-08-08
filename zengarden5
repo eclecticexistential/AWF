@@ -1,0 +1,61 @@
+body{
+  background: url("https://i.ytimg.com/vi/OR03vnr6H1Y/maxresdefault.jpg")no-repeat fixed;
+  -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+.page-wrapper{
+margin:-8px;
+  background-color: rgb(240,240,240);
+  background-color: rgba(240,240,240,0.3);
+}
+#zen-intro h1{
+  font-family: arial;
+  font-size: 72px;
+  color:#FFF;
+  text-shadow: 1px 1px 5px #102030;
+  text-align: right;
+  margin: 5px;
+}
+#zen-intro h2{
+font-family: montserrat;
+text-align:right;
+  font-size:20px;
+  color:#151434;
+  margin-top: -.2%;
+  margin-right:10px;
+}
+#zen-summary{
+  font-size:16px;
+  text-align: right;
+  float: right;
+  margin-right: 10px;
+  width: 20%;
+}
+#zen-preamble, #zen-supporting{
+margin-left: 10px;
+  width: 70%;
+  margin-top: 5%;
+}
+#zen-preamble h3{
+  margin-top: 21%;
+}
+a{color: #123;}
+
+#zen-preamble h3, #zen-supporting h3{
+  color: #151434;
+}
+#zen-preamble p, #zen-supporting p{
+  margin-left: 10%;
+  color:#222;
+  text-shadow: 1px 1px 3px #FFF;
+  font-size: 16px;
+  font-family: montserrat;
+}
+.sidebar{
+  float: right;
+  font-size:14px;
+  margin-top: -104%;
+  width: 20%;
+}
