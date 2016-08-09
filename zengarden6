@@ -1,0 +1,53 @@
+body{
+  background-color: #779;
+  text-align: center;
+}
+.page-wrapper{
+margin: -20px -7px;
+padding-top:5px;
+  background: rgb(255,255,255);
+  background: rgba(255,255,255,0.4);
+}
+#zen-intro h1{
+  margin-top: 5%;
+  font-size: 72px;
+  color: #FFF;
+  text-shadow: 1px 1px 5px #000;
+  font-family: arial;
+}
+#zen-intro h2{
+  margin-top: -5%;
+  font-size: 20px;
+  text-shadow: 1px 1px 5px #FFF;
+}
+#zen-summary{
+margin-top: 5%;
+  background-color: #EEE;
+  padding: 1% 30%;
+}
+#zen-preamble, #zen-participation, #zen-requirements{
+  text-align: left;
+  padding-right: 50%;
+}
+.sidebar{
+display: inline-block;
+background-color: #EEE;
+padding: 5px;
+margin: 3% 0% 3% 0%;
+border-radius: 5px;
+}
+h3{
+color: #449;
+text-shadow: 1px 1px 5px #FFF;}
+
+#zen-explanation, #zen-benefits{
+  text-align: right;
+  background-color: #EEE;
+  padding-left: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#zen-explanation h3, #zen-benefits h3{
+  text-shadow: 1px 1px 5px #000;
+}
+a{color:#149;}
