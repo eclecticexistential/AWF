@@ -1,0 +1,62 @@
+body{
+  background-color: #023657;
+}
+#zen-intro h1{
+font-size: 74px;
+  color:#CC9700;
+  text-shadow: 1px 1px 5px #FFF;
+}
+#zen-intro h2{
+font-family: montserrat;
+  font-size: 24px;
+  color: #075282;
+  text-shadow: 1px 1px 3px #FFF;
+  margin-top: -5%;
+  margin-left: 15%;
+}
+#zen-intro h1, #zen-intro h2{
+  padding-left: 25px;
+}
+#zen-summary{
+font-size: 18px;
+  color: #300C00;
+  margin-left: 35%;
+  margin-top: 5%;
+  width: 40%;
+}
+#zen-preamble, #zen-supporting{
+  float: left;
+  text-align: left;
+  width: 40%;
+  padding-left: 30px;
+}
+
+#zen-preamble{
+margin-top: 10px;
+  position: absolute;
+}
+#zen-supporting{
+  position: relative;
+  display:block;
+  margin-top: 19%;
+}
+.sidebar{
+  float: right;
+  margin-right: 30px;
+  margin-top: 2%;
+  padding: 15px;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
+}
+#zen-preamble h3{
+font-family: arial;
+  color:#AB7E00;
+  font-size: 24px;
+}
+a{color: #149;
+text-decoration: none;}
+h3{ font-size: 20px;
+color: #04446D;
+font-family: montserrat;
+text-shadow: 1px 1px 3px #000;}
