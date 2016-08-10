@@ -48,6 +48,5 @@ text-shadow: 1px 1px 5px #FFF;}
   padding-bottom: 10px;
 }
 #zen-explanation h3, #zen-benefits h3{
-  text-shadow: 1px 1px 5px #000;
 }
 a{color:#149;}
