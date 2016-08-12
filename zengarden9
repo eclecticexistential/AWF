@@ -1,0 +1,64 @@
+#css-zen-garden{
+color: #5B2F00;
+background-color: #DDD;
+}
+h3{
+  color:#867500;
+  font-family: montserrat;
+  font-size: 19px;
+}
+#zen-intro h1{
+  background-color: #142373;
+  padding: 30px;
+  padding-left: 62.5%;
+  margin: -10px;
+  margin-top: -15px;
+  font-size: 60px;
+  color: #CCB51B;
+  text-shadow: 1px 1px 3px #FFF;
+  box-shadow: 1px 1px 3px #000;
+  position: fixed;
+  width: 100%;
+}
+#zen-intro h2, #zen-summary{
+margin-top: 10%;
+  width: 30%;
+  position: fixed;
+  padding-left: 5%;
+}
+#zen-intro h2{
+  color: #3D4C9B;
+  font-size: 32px;
+}
+#zen-summary{
+  margin-top: 12%;
+  margin-left: -5px;
+  padding-top: 1%;
+  font-size: 14px;
+}
+#zen-preamble{
+  padding-top: 10%;
+  margin-left: 50%;
+  text-align: right;
+  padding-right: 5%;
+}
+#zen-supporting{
+  margin-left: 50%;
+  text-align: right; 
+  padding-right: 5%;
+}
+.sidebar{
+  margin-top: -94.5%;
+  margin-left: 5.2%;
+  position: fixed;
+  font-family: arial;
+  font-size: 14px;
+  background-color: #3D4C9B;
+  padding: 3px 28px;
+  box-shadow: 1px 1px 5px #000;
+  border-radius: 5px;
+}
+a{
+  text-decoration: none;
+  color: #09165C;
+}
