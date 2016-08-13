@@ -1,0 +1,49 @@
+#css-zen-garden{
+  background-color: #118666;
+}
+#zen-intro h1{
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.3);
+  margin: -14.5px -6px;
+  padding: 20px;
+  font-size: 72px;
+  color: #366195;
+}
+#zen-intro h2, #zen-summary, #zen-preamble, #zen-supporting{
+  text-align: right;
+  padding-left: 40%;
+  width: 40%;
+}
+#zen-intro h2{
+font-family: arial;
+  color:#2E238E;
+  font-size: 24px;
+}
+#zen-summary{
+padding: 5% 40% 5px 42%;
+margin-top:-4%;
+margin-left: -1%;
+  background-color: rgb(0,88,64);
+  background-color: rgba(0,88,64,0.3);
+}
+#zen-preamble{
+padding: 5px 40% 5px 42%;
+margin-left: -1%;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 0.3);
+}
+#zen-participation, #zen-requirements{
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 0.3);
+}
+.sidebar{margin-top: -123.9%;
+padding: 45px;
+width: 20%;
+margin-left: -1%;
+background-color: rgb(73,63,168);
+position: fixed;
+}
+a{color:#021C3B;}
+h3{
+  color: #130A5D;
+}
