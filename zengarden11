@@ -1,0 +1,75 @@
+body{
+  background: url("http://2.bp.blogspot.com/-vSE6wJTzo-I/UvFdHHOKCTI/AAAAAAAABGs/ocUr4JSEfeI/s1600/Zen%2Bwhite%2Bflower%2Bon%2Bblack%2Bstone.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+ #zen-resources{
+ box-shadow: 1px 1px 5px #000;
+  margin-top:-105%;
+  position: fixed;
+  margin-left: 22.6%;
+  background-color:rgb(60,60,79);
+  background-color:rgba(60,60,79,0.4);
+  width: 16%;
+  padding: .75%;
+  border-radius: 5px;
+  font-family:arial;
+}
+#zen-intro h1{
+position: fixed;
+border-radius: 5px;
+margin:-2% -1%;
+padding:2%;
+  font-size: 72px;
+  color: white;
+  width: 40%;
+  background-color:rgb(53,64,73);
+  background-color:rgba(53,64,73,0.4);
+  box-shadow: 1px 1px 5px #000;
+}
+#zen-intro h2{
+position: fixed;
+font-family: sans-serif;
+font-size:20px;
+  margin-left: 19.7%;
+  margin-top:5.3%;
+  color:#6A7780;
+}
+#zen-summary{
+position: fixed;
+  width: 40%;
+  padding: 11% 2%;
+}
+#zen-preamble{
+  width: 45%;
+  margin-left:52%;
+  padding-top: 9%;
+}
+#zen-supporting{
+  width: 45%;
+  margin-left:50%;
+  margin-top: -20.5%;
+  padding: 20% 2% 2%;
+  border-radius: 5px;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.3);
+}
+#zen-supporting h3,#zen-preamble h3{
+  font-family: montserrat;
+  color:#123023;
+}
+.sidebar{
+border-radius: 5px;
+  margin-top: -32%;
+  width: 20%;
+  padding:.75%;
+  margin-left:2.1%;
+  background-color: rgb(55,77,68);
+  background-color: rgba(55,77,68,0.5);
+  box-shadow: 1px 1px 5px #000;
+}
+a{text-decoration:none;
+color:#1E2931;}
+#zen-preamble p, #zen-supporting p{font-size:18px;}
