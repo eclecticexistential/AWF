@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.myboxes{
+  position: absolute;
+  width: 260px;
+  height:260px;
+  background:#E2E2E2;
+  padding: 20px;
+  display: none;
+}
+#box1{
+background-color: red;
+  top:10px;
+  left:10px;
+}
+#box2{
+background-color: blue;
+  top:10px;
+  left:300px;
+}
+#box3{
+background-color: green;
+  top:10px;
+  left:600px;
+}
+</style>
+<script>
+var boxArray = ['box1','box2','box3'];
+window.addEventListener('mouseup', function(event){
+  for(var i=0; i<boxArray.length; i++){
+    var box=document.getElementById(boxArray[i]);
+      if(event.target != box && event.target.parentNode != box){
+    box.style.display='none';
+    }
+  }
+});
+<!--event target will close upon radio choice -->
+</script>
+</head>
+<body>
+<h2>Page content...</h2>
+<button onclick="document.getElementById('box1').style.display='block'">Pop-Out Interface</button>
+<div id="box1" class="myboxes">
+<h2>Pop Out Interface</h2>
+<form action="">
+  <input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+</form>
+</div>
+<button onclick="document.getElementById('box2').style.display='block'">Pop-Out Interface</button>
+<div id="box2" class="myboxes">
+<h2>Pop Out Interface</h2>
+<form action="">
+  <input type="checkbox" name="mood" value="happy"> Happy<br>
+  <input type="checkbox" name="mood" value="sad"> Sad<br>
+  <input type="checkbox" name="mood" value="content"> Content
+</form>
+</div>
+<button onclick="document.getElementById('box3').style.display='block'">Pop-Out Interface</button>
+<div id="box3" class="myboxes">
+<h2>Pop Out Interface</h2>
+<fieldset>
+    <legend>Birth Month</legend>
+    <select name="month">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+  </fieldset>
+</div>
+</body>
