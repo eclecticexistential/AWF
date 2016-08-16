@@ -1,0 +1,294 @@
+<style>
+  body{
+    height: 200px;   
+  }
+  h1{
+  font-family: arial;
+  color: white;
+  font-size: 46px;
+  text-shadow: 1px 1px 3px #000;
+  background-color: #249;
+  text-align: center;
+  padding: 25px;
+  margin: -1%;
+  box-shadow: 1px 1px 5px #000;
+  }
+  .menu>button{
+  font-family: montserrat;
+  margin-top: 3%;
+  box-shadow: 1px 1px 5px #000;
+  color: white;
+  padding: 5px 10px;
+  margin-left: 3%;
+  margin-bottom:2%;
+  border-radius: 2px;
+  text-shadow: 1px 1px 3px #000;
+  }
+  #blue{
+  margin-left: 5%;
+  background: blue;
+  border: 2px solid blue;
+  }
+  #green{
+  background: green;
+  border: 2px solid green;
+  }
+  #red{
+  background: red;
+  border: 2px solid red;
+  }
+  #yellow{
+  background: yellow;
+  border: 2px solid yellow;
+  }
+  #orange{
+  background: orange;
+  border: 2px solid orange;
+  }
+  #purple{
+  background: purple;
+  border: 2px solid purple;
+  }
+  #maroon{
+  background:maroon;
+  border: 2px solid maroon;
+  }
+  #teal{
+  background:teal;
+  border: 2px solid teal;
+  }
+  #lavender{
+  background:lavender;
+  border: 2px solid lavender;
+  }
+  #olive{
+  background:olive;
+  border:2px solid olive;
+  }
+  #brown{
+  background:brown;
+  border:2px solid brown;
+  }
+  .blue {
+    height: 8px; width: 8px;
+    border-radius: 4px; /* rounds corners */
+    background: blue;
+    position: absolute;
+  }
+  .green {
+    height: 8px; width: 8px;
+    border-radius: 4px; /* rounds corners */
+    background:green;
+    position: absolute;
+  }
+  .red{
+  height: 8px; width: 8px;
+    border-radius: 4px; /* rounds corners */
+    background:red;
+    position: absolute;
+  }
+  .yellow{
+  height: 8px; width: 8px;
+    border-radius: 4px; /* rounds corners */
+    background:yellow;
+    position: absolute;
+  }
+  .orange{
+  height: 8px; width: 8px;
+    border-radius: 4px; /* rounds corners */
+    background:orange;
+    position: absolute;
+  }
+  .purple{
+  height: 8px; width: 8px;
+  border-radius: 4px;
+  background:purple;
+  position: absolute;
+  }
+  .maroon{
+  height:8px;width:8px;
+  border-radius:4px;
+  background:maroon;
+  position: absolute;
+  }
+  .teal{
+  height:8px;width:8px;
+  border-radius:4px;
+  background:teal;
+  position:absolute;
+  }
+  .lavender{
+  height:8px;width:8px;
+  border-radius:4px;
+  background:lavender;
+  position:absolute;
+  }
+  .olive{
+  height:8px;width:8px;
+  border-radius:4px;
+  background:olive;
+  position:absolute;
+  }
+  .brown{
+  height:8px;width:8px;
+  border-radius:4px;
+  background:brown;
+  position:absolute;
+  }
+  p{
+  margin-top: -1px;
+  margin-left: -2px;
+  border: 1px solid black;
+  font-size: 72px;
+  text-shadow: 1px 1px 3px #000;
+  padding: 18.5% 0%;
+  text-align: center;
+  color: white;
+  width: 100%;
+  background: beige;
+  }
+</style>
+<h1>Pick a color ^_^!</h1>
+<div class="menu">
+<button id="blue">Blue</button>
+<button id="green">Green</button>
+<button id="red">Red</button>
+<button id="yellow">Yellow</button>
+<button id="orange">Orange</button>
+<button id="purple">Purple</button>
+<button id="maroon">Maroon</button>
+<button id="teal">Teal</button>
+<button id="lavender">Lavender</button>
+<button id="olive">Olive</button>
+<button id="brown">Brown</button>
+</div>
+<p></p>
+
+
+<script>
+var bu=document.getElementById("blue");
+var para=document.querySelector("p");
+  bu.addEventListener("click",function(event){
+  para.addEventListener("click", function(event) {
+    var dot = document.createElement("div");
+    dot.className = "blue";
+    dot.style.left = (event.pageX - 4) + "px";
+    dot.style.top = (event.pageY - 4) + "px";
+    document.body.appendChild(dot);
+    });
+  });
+var bo=document.getElementById("green");
+var para=document.querySelector("p");
+  bo.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="green";
+  dot.style.left = (event.pageX - 4) + "px";
+    dot.style.top = (event.pageY - 4) + "px";
+    document.body.appendChild(dot);
+  });
+});
+var bi=document.getElementById("red");
+var para=document.querySelector("p");
+  bi.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="red";
+  dot.style.left = (event.pageX - 4) + "px";
+    dot.style.top = (event.pageY - 4) + "px";
+    document.body.appendChild(dot);
+  });
+  });
+
+var bb=document.getElementById("yellow");
+var para=document.querySelector("p");
+  bb.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="yellow";
+  dot.style.left = (event.pageX - 4) + "px";
+    dot.style.top = (event.pageY - 4) + "px";
+    document.body.appendChild(dot);
+  });
+  });
+
+
+var bc=document.getElementById("orange");
+var para=document.querySelector("p");
+  bc.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="orange";
+  dot.style.left = (event.pageX - 4) + "px";
+    dot.style.top = (event.pageY - 4) + "px";
+    document.body.appendChild(dot);
+  });
+  });
+
+var by=document.getElementById("purple");
+var para=document.querySelector("p");
+by.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="purple";
+  dot.style.left=(event.pageX-4)+"px";
+  dot.style.top=(event.pageY-4)+"px";
+  document.body.appendChild(dot);
+  });
+});
+var be=document.getElementById("maroon");
+var para=document.querySelector("p");
+be.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="maroon";
+  dot.style.left=(event.pageX-4)+"px";
+  dot.style.top=(event.pageY-4)+"px";
+  document.body.appendChild(dot);
+  });
+});
+var ba=document.getElementById("teal");
+var para=document.querySelector("p");
+ba.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="teal";
+  dot.style.left=(event.pageX-4)+"px";
+  dot.style.top=(event.pageY-4)+"px";
+  document.body.appendChild(dot);
+  });
+});
+var bd=document.getElementById("lavender");
+var para=document.querySelector("p");
+bd.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="lavender";
+  dot.style.left=(event.pageX-4)+"px";
+  dot.style.top=(event.pageY-4)+"px";
+  document.body.appendChild(dot);
+  });
+});
+var bf=document.getElementById("olive");
+var para=document.querySelector("p");
+bf.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="olive";
+  dot.style.left=(event.pageX-4)+"px";
+  dot.style.top=(event.pageY-4)+"px";
+  document.body.appendChild(dot);
+  });
+});
+var bh=document.getElementById("brown");
+var para=document.querySelector("p");
+bh.addEventListener("click",function(event){
+  para.addEventListener("click",function(event){
+  var dot=document.createElement("div");
+  dot.className="brown";
+  dot.style.left=(event.pageX-4)+"px";
+  dot.style.top=(event.pageY-4)+"px";
+  document.body.appendChild(dot);
+  });
+});
+</script>

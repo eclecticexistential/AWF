@@ -1,0 +1,179 @@
+<style>
+#button1{
+  border: 1px solid #BBB;
+  border-radius: 2px;
+  background-color: #EEE;
+  padding: 4px;
+  font-family: arial;
+  font-size: 12px;
+}
+</style>
+
+<script>
+  addEventListener("click", function() {
+    alert("You clicked!");
+  });
+</script>
+
+<p>Click this document to activate the handler.</p>
+<button>Act-once button</button>
+<button>Click me</button>
+<!--order customizes the buttons -->
+<p id="win">No handler here.</p>
+
+<script>
+  var button = document.querySelector("button");
+  button.addEventListener("click", function() {
+    alert("Button clicked.");
+  });
+</script>
+
+<script>
+  var button = document.querySelector("button");
+  function once() {
+    document.write("Done.");
+    button.removeEventListener("click", once);
+  }
+  button.addEventListener("click", once);
+</script>
+<!-- button with event inside para with onclick event -->
+<button id="button1">Click me any way you want</button>
+<script>
+  var button = document.getElementById("button1");
+  button.addEventListener("mousedown", function(event) {
+    if (event.which == 1)
+      alert("Left button");
+    else if (event.which == 2)
+      alert("Middle button");
+    else if (event.which == 3)
+      alert("Right button");
+  });
+</script>
+
+<p id="yep">A paragraph with a <button id="deal">button</button>.</p>
+<script>
+  var para = document.getElementById("yep");
+  var button = document.getElementById("deal");
+  para.addEventListener("mousedown", function() {
+    alert("Handler for paragraph.");
+  });
+  button.addEventListener("mousedown", function(event) {
+    alert("Handler for button.");
+    if (event.which == 3)
+      event.stopPropagation();
+  });
+</script>
+
+<button>A</button>
+<button>B</button>
+<button>C</button>
+<script>
+  document.body.addEventListener("click", function(event) {
+    if (event.target.nodeName == "BUTTON")
+      alert("Clicked", event.target.textContent);
+  });
+</script>
+
+<br></br>
+
+<a href="https://developer.mozilla.org/">MDN</a>
+<script>
+  var link = document.querySelector("a");
+  link.addEventListener("click", function(event) {
+    alert("Nope.");
+    event.preventDefault();
+  });
+</script>
+
+<p>This page turns violet when you hold the V key.</p>
+<script>
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 86)
+      document.body.style.background = "violet";
+  });
+  addEventListener("keyup", function(event) {
+    if (event.keyCode == 86)
+      document.body.style.background = "";
+  });
+</script>
+<p>This page turns teal when you hold the T key.</p>
+<script>
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 84)
+      document.body.style.background = "teal";
+  });
+  addEventListener("keyup", function(event) {
+    if (event.keyCode == 84)
+      document.body.style.background = "";
+  });
+</script>
+<p>This page turns orange when you hold the O key.</p>
+<script>
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 79)
+      document.body.style.background = "orange";
+  });
+  addEventListener("keyup", function(event) {
+    if (event.keyCode == 79)
+      document.body.style.background = "";
+  });
+</script>
+<p>This page turns maroon when you hold the M key.</p>
+<script>
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 77)
+      document.body.style.background = "maroon";
+  });
+  addEventListener("keyup", function(event) {
+    if (event.keyCode == 77)
+      document.body.style.background = "";
+  });
+</script>
+<p>This page turns red when you hold the R key.</p>
+<script>
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 82)
+      document.body.style.background = "red";
+  });
+  addEventListener("keyup", function(event) {
+    if (event.keyCode == 82)
+      document.body.style.background = "";
+  });
+</script>
+</script>
+<p>This page turns red when you hold the B key.</p>
+<script>
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 66)
+      document.body.style.background = "blue";
+  });
+  addEventListener("keyup", function(event) {
+    if (event.keyCode == 66)
+      document.body.style.background = "";
+  });
+</script>
+<script>
+function findKey(){
+var key=prompt("Which character?");
+  return key.charCodeAt();
+}
+document.write(findKey());
+</script>
+
+<p id="per">Press Ctrl-Space to continue.</p>
+<script>
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 32 && event.ctrlKey)
+      document.getElementById("per").innerHTML=("Continuing!");
+  });
+  addEventListener("keyup", function(event){
+  if(event.keyCode== 32 && event.ctrlKey)
+  document.getElementById("per").innerHTML=("Press Ctrl-Space to continue.");
+  })
+
+</script><p id="go">Focus this area and type something.<p>
+<script>
+  addEventListener("keypress", function(event) {
+    document.getElementById("go").innerHTML=(String.fromCharCode(event.charCode));
+  });
+</script>
