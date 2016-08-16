@@ -1,0 +1,51 @@
+body{
+  background-color: #000;
+  color: #CCC;
+  font-size: 24px;
+}
+#zen-intro h1{
+  color:#303;
+  font-size: 72px;
+  text-shadow: 1px 1px 3px #FFF;
+  text-align: center;
+}
+#zen-intro h2{
+  color:#4A4;
+  text-align: center;
+  margin-top: -5%;
+  margin-left: 19%;
+}
+#zen-summary,#zen-preamble, #zen-supporting{
+text-align: center;
+margin-left: 25%;
+width: 50%;
+}
+#zen-summary{
+  border: 1px solid #336699;
+}
+#zen-summary, #zen-preamble, #zen-participation,#zen-requirements{
+  padding: 15px;
+}
+#zen-preamble{
+margin-top: 3%;;
+border-radius: 5px;
+  background-color:#216;
+}
+#zen-participation{
+border-radius: 5px;
+  background-color: #499;}
+#zen-requirements{
+border-radius: 5px;
+  background-color: #36A;
+}
+.sidebar{
+padding: 15px;
+position: fixed;
+font-size: 14px;
+width: 17%;
+background-color: rgb(100,100,100);
+background-color: rgba(100,100,100,0.3);
+margin-top: -224%;
+}
+a{text-decoration: none;
+color: #249;}
