@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<canvas id="c"width="640"height="480"style="background:#000"></canvas>
+<script>
+c=document.getElementById('c').getContext('2d');
+c.fillStyle="#249";
+c.font="60px arial";
+w=s=1;
+p=0;
+z=1;
+b=10;
+m=420;
+n=270;
+x=300;y=235;
+u=-9;v=3;
+setInterval(function(){if(w&&!s)return;s=0
+  c.clearRect(0,0,640,480)
+  for(i=5;i<640;i+=20)c.fillRect(i,440,10,2)
+  m+=p
+  n+=z
+  n=n<0?0:n;n=n>540?540:n
+  x+=u
+  y+=v
+  if(y<=10){y=10;v=-v}
+  if(x<10){x=10;u=-u+2}
+  if(x>630){x=630;u=-u-3}
+  if(y<=410&&y>=407&&x<n+120&&x>n-10){v=-v-0.75;y+=(u-p-45)/20}
+  if(y>445){b--;x=300;y=235;u=7;w=1||b--;n=270;x=320;y=409;v=-4;w=1}
+  c.fillText(b,20,60)
+  c.fillRect(n,m,100,20) 
+  c.beginPath()
+  c.arc(x,y,10,0,7)
+  c.fill()
+  c.stroke()
+  if(b<=0){b=("GAME OVER ;_;");u=0;v=0;}
+},30)
+document.onkeydown=function(e){k=(e||window.event).keyCode;w=w?0:k=='27'?1:0;z=k=='39'?6:k=='37'?-6:z;}
+document.onkeyup=function(e){k=(e||window.event).keyCode;z=k=='39'||k=='37'?0:z;}
+</script>
