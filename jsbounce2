@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<canvas id="c"width="640"height="480"style="background:#000"></canvas>
+<script>
+c=document.getElementById('c').getContext('2d');
+c.fillStyle="#249";
+c.font="60px arial";
+w=s=1;
+p=0;
+z=1;
+b=10;
+m=420;
+n=270;
+x=320;y=240;
+u=-4;v=4;
+var brickRowCount = 5;
+var brickColumnCount = 3;
+var brickWidth = 75;
+var brickHeight = 20;
+var brickPadding = 10;
+var brickOffsetTop = 50;
+var brickOffsetLeft = 100;
+var score = 0;
+
+var bricks = [];
+for(d=0; d<brickColumnCount; d++) {
+    bricks[d] = [];
+    for(r=0; r<brickRowCount; r++) {
+        bricks[d][r] = { x: 0, y: 0, s: 1 };
+    }
+}
+
+function col() {
+    for(d=0; d<brickColumnCount; d++) {
+        for(r=0; r<brickRowCount; r++) {
+            var t = bricks[d][r];
+            if(t.s == 1) {
+                if(x > t.x && x < t.x+brickWidth && y > t.y-5 && y < t.y+40) {
+                    v = -v;
+                    t.s = 0;
+                    score++;
+                    if(score == brickRowCount*brickColumnCount) {
+                        alert("YOU WIN, CONGRATULATIONS ^_^!");
+                        document.location.reload();
+                    }
+                }
+            }
+        }
+    }
+}
+
+function drawBricks() {
+    for(d=0; d<brickColumnCount; d++) {
+        for(r=0; r<brickRowCount; r++) {
+            if(bricks[d][r].s == 1) {
+                var brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;
+                var brickY = (d*(brickHeight+brickPadding))+brickOffsetTop;
+                bricks[d][r].x = brickX;
+                bricks[d][r].y = brickY;
+                c.beginPath();
+                c.rect(brickX, brickY, brickWidth, brickHeight);
+                c.fillStyle = "#841F27";
+                c.fill();
+                c.closePath();
+            }
+        }
+    }
+}
+
+function drawScore() {
+    c.font = "16px arial";
+    c.fillStyle = "#0095DD";
+    c.fillText("Score: "+score, 8, 20);
+}
+
+function drawPaddle(){
+  c.beginPath();
+  c.rect(n,m,100,20);
+  c.fillStyle="#0095DD";
+  c.fill();
+  c.closePath();
+}
+function drawBall(){
+  c.beginPath();
+  c.arc(x,y,b,0,7);
+  c.fillStyle="orange";
+  c.fill();
+  c.closePath();
+}
+function line(){
+  c.fillStyle="#663399";
+for(i=5;i<640;i+=20)c.fillRect(i,440,10,2)
+}
+
+
+
+function draw(){
+  c.clearRect(0,0,640,480)
+  drawBall();
+  drawPaddle();
+  line();
+  drawBricks();
+  drawScore();
+  col();
+}
+
+setInterval(function(){if(w&&!s)return;s=0;
+  draw();
+  m+=p
+  n+=z
+  n=n<0?0:n;n=n>540?540:n
+  x+=u
+  y+=v
+  if(y<=10){y=10;v=-v}
+  if(x<10){x=10;u=-u}
+  if(x>630){x=630;u=-u}
+  if(y<=410&&y>=406&&x<n+120&&x>n-10){v=-v;y+=(u-45)/20}
+  if(y>445){alert("GAME OVER");document.location.reload();w=1}
+},30)
+document.onkeydown=function(e){k=(e||window.event).keyCode;w=w?0:k=='27'?1:0;z=k=='39'?7:k=='37'?-7:z;}
+document.onkeyup=function(e){k=(e||window.event).keyCode;z=k=='39'||k=='37'?0:z;}
+</script>
