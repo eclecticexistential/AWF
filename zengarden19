@@ -1,0 +1,90 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:100");
+@import url("http://fonts.googleapis.com/css?family=Lora");
+
+body{
+  font-family:Lato;
+  background-color:#FAFAFA;
+}
+p{
+  font: 16px Lora;}
+header{
+  width: 100%;
+  position:fixed;
+  background-color: white;
+  font:16px; 
+  padding-left:2%; 
+  display:flex; 
+  border:1px solid #EEE; 
+  margin-top:-5.3%;
+  margin-left:-5px;
+  z-index:1;
+}
+h2{
+  padding-left: 65%;
+}
+div:nth-of-type(2n+1){margin-top:5.3%;}
+#zen-summary{
+  background-image:url("https://www.hayesgardenworld.co.uk/sites/default/files/images/headers/garden%20at%20night%20resize.jpg?1382614690");
+  height: 300px;
+  position:relative;
+}
+#zen-summary p{
+  background-color:white;
+  position:absolute;
+  margin-top:41%;
+}
+#zen-summary p:nth-of-type(odd){padding:2% 1% 5% 1%;
+  border-bottom:1px solid #EEE;
+  border-right:1px solid #EEE;
+  border-left:1px solid #EEE;
+  }
+#zen-summary p:nth-of-type(even){
+margin-top:49%;
+margin-left:28%;
+}
+#zen-preamble h3{text-align:left;}
+#zen-preamble,#zen-supporting,#zen-summary{ 
+  text-align:center; 
+  width:50%; 
+  margin-left:32%;
+  margin-right:40%;
+}
+#zen-preamble,#zen-supporting>div{
+  background-color:white;
+  border-bottom:1px solid #EEE;
+  border-right:1px solid #EEE;
+  border-left:1px solid #EEE;
+}
+#zen-supporting>div>h3{
+text-align:left;
+padding: 4% 0 0 2%;
+margin-top:-1%;
+border-top:1px solid #EEE;
+}
+#zen-supporting p{
+padding-left:3%;
+padding-right:3%;
+}
+#zen-explanation{margin-top:-10.7%;}
+#zen-benefits{margin-top:-1%;}
+#zen-preamble{
+padding-top:1%;
+padding-right:2%;
+padding-left:2%;
+margin-top:4%;
+width:45.85%;
+}
+.sidebar{
+  margin-top:-148.5%; 
+  margin-left:-.5%;
+  background-color: white;
+  padding:5px 15px 15px;
+  width:20%;
+  border:1px solid #EEE;
+  font-size:17px;
+  position:fixed;
+}
+#design-archives h3, #zen-resources h3{
+color:red;
+}
+a{text-decoration:none; color:#111; font-family:Lora;}
