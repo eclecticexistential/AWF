@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<style>
+@import url("http://fonts.googleapis.com/css?family=Lora");
+*{margin: 0;padding: 0;}
+.wrapper{background: #544; 
+  background: linear-gradient(#569, #600);
+  padding-bottom:16%;
+  font: 18px montserrat;
+  }
+
+h1{padding-top:10px;padding-bottom:30%;text-align:center;font: 82px Lora; color:#56F;text-shadow:1px 1px 4px #000;}
+
+img{padding:40px; position:fixed;margin-top:-29%;}
+
+
+#play, #hit, #stand{
+  padding:10px 30px;
+  border:1px solid #249;
+  background-color:#249;
+  font-size: 24px;
+  color:white;
+  box-shadow: 1px 1px 3px #000;
+}
+a{
+  margin-left:50px;
+  text-decoration:none;
+  padding:8px 30px 11px;
+  border:1px solid #249;
+  background-color:#249;
+  font-size: 24px;
+  color:white;
+  box-shadow: 1px 1px 3px #000;}
+
+#s{ position:absolute;
+margin-left:35%;
+margin-top:-25%;
+}
+
+#player{
+  width:50%;
+  float:right;
+  margin-right:13%;
+  display:inline-flex;
+  margin-top:-18%;
+  padding-right:5%;
+  padding-left:4%;
+  background-color:#006400;
+  box-shadow:1px 1px 3px #010;
+}
+#player p{
+margin:5%;
+padding:10px;
+border:1px solid white;
+}
+#dealt{
+position:absolute; 
+margin-top:-10px;
+font-size:24px;
+margin-left:52%;
+}
+#itl{
+margin-top:4%;
+display:inline-flex;
+float:right; 
+width:40%;
+margin-right:17%;
+background-color:#007000;
+padding:3% 3% 3% 7%;
+}
+#itl p{
+margin-left:5px;
+  padding:15px;
+  border: 1px solid white;
+}
+#ad,#blouse{color:olive;}
+
+</style>
+
+<script>
+
+function p(x){
+  var p=(Math.floor((Math.random())*x)+1);
+  return p;
+}
+function draw(){
+  y=p(13);
+  return y;
+}
+function suit(){
+  var y=p(4);switch (y){
+  case 1: return "diamond";break;
+  case 2: return "club"; break;
+  case 3: return "spade"; break;
+  case 4: return "heart"; break;
+    } 
+  return;
+}
+function kind(x){
+  if(x==1)return "Ace";
+    if(x==11)return "Jack";
+    if(x==12)return "Queen";
+  if(x==13)return "King";
+  return "" + x;
+  }
+
+function total(a,b){
+                    if(a>10)a=10;
+                    if(b>10)b=10;
+                  score=a+b;
+                    if((score<=11)&&(a===1)) {return score+=10;}
+                    if((score<=11)&&(b===1)) {return score+=10;}
+                  return score;}
+
+var score=0;
+var dealerHand=0;
+
+function card(){
+    a1=draw();
+    a2=draw();
+    a3=draw();
+  score+=total(a1,a2);
+    b1=kind(a1);
+    b2=kind(a2);
+    b3=kind(a3);
+}
+
+function play(){
+  card();
+    document.getElementById("here").innerHTML=b1+ ' ' +suit();
+    document.getElementById("there").innerHTML=b2+' ' +suit();
+    document.getElementById("where").innerHTML=score;
+}
+function solo(a3){ 
+  if(a3>10){a3=10;}
+    if((a3===1)&& score<=10){a3=11;}
+  return a3;
+}
+function hit(){
+  document.getElementById("where").innerHTML=b3+' ' +suit();
+  score+=solo(a3);
+  document.getElementById("add").innerHTML=score;
+  if(score>21){alert("You busted!");}
+}
+
+function stand(){
+  document.getElementById("ad").innerHTML=score;
+  return dealer();
+}
+
+function dealerCard(){
+    a5=draw();
+    a6=draw();
+    a7=draw();
+  dealerHand+=total(a5,a6);
+    b5=kind(a5);
+    b6=kind(a6);
+    b7=kind(a7);
+}
+
+function dealerSolo(a7){ 
+  if(a7>10){a7=10;}
+    if((a7===1)&& dealerHand<=10){a7=11;}
+  return a7;}
+
+function dealer(){
+  dealerCard();
+  document.getElementById("dealer").innerHTML=b5+' ' +suit();
+  document.getElementById("house").innerHTML=b6+' ' +suit();
+  document.getElementById("mouse").innerHTML=dealerHand;
+  if(dealerHand<17){
+  dealerHand+=dealerSolo(a7);
+  document.getElementById("spouse").innerHTML=b7+' ' +suit();
+  document.getElementById("blouse").innerHTML= dealerHand;}
+  if(dealerHand>21){alert("Dealer busted! You win!"); return;}
+  if(dealerHand==21){alert("Dealer wins with 21!"); return;}
+  else return compare();
+}
+
+function compare(){
+alert("You win!");
+}
+
+</script>
+<body>
+<div class="wrapper">
+<h1>MY BLACK JACK GAME! </h1>
+<div id="s">
+<input type=button id="play" value="Play!" onclick= play()></input>
+<input type=button id="hit" value="Hit" onclick=hit()></input>
+<input type=button id="stand" value="Stand" onclick=stand()></input>
+<a href = "" onClick="alert('You successfully restarted the game.');">Play again?</a>
+</div>
+<p id="dealt">Dealer's Hand</p>
+<img src="http://www.psdgraphics.com/file/female-silhouette.jpg" alt="silhouette" height="300" width="300">
+<div id='player'>
+<p id="here">First card</p>
+<p id="there">Second card</p>
+<p id="where"></p>
+<p id="add"></p>
+<p id="ad">Stand with</p>
+</div>
+<div id="itl">
+<p id="dealer">Dealer card</p>
+<p id="house">Dealer card</p>
+<p id="mouse"></p>
+<p id="spouse"></p>
+<p id="blouse">Dealer Score</p>
+</div>
+</div>
+</body>
