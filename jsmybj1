@@ -64,7 +64,7 @@ function total(m){
                     if(m>10)m=10;
                     score+=m;
                     if((score<=11)&&(m===1)) {return (score+=10)+(aces+=1);}
-                    if(score>21 && aces>0 && (m===1)){return score-=10;}
+                    if(score>21 && aces>0){return score-=10;}
                   return score;}
 
 function card(){
@@ -90,7 +90,8 @@ document.getElementById("play").addEventListener("click", function(){
 document.getElementById("hit").addEventListener("click", function(){
   document.getElementById("c").innerHTML=game();
   document.getElementById("d").innerHTML="Updated score: "+score;
-  if(score>21 && aces==0){alert("You busted!")};
+  if(score>21 && aces==0){alert("You busted!"); return;}
+  if(score===21){return dealer();}
 });
 
 //stand
@@ -101,8 +102,8 @@ document.getElementById("stand").addEventListener("click", function(){
 function dealerScore(m){
                     if(m>10)m=10;
                     dealerHand+=m;
-                    if((dealerHand<=11)&&(m===1)) {return (dealerHand+=10)+(dealerAces+=1);}
-                    if(dealerHand>21 && (dealerAces>0) && (m===1)){dealerHand-=10;}
+                    if((dealerHand<=11)&&(m===1)) {return (dealerAces+=1)+(dealerHand+=10);}
+                    if(dealerHand>21 && dealerAces>0){return dealerHand-=10;}
                   return dealerHand;}
 
 function dealerCard(){
@@ -115,24 +116,20 @@ function dealer(){
   document.getElementById("f").innerHTML=dealerCard();
   document.getElementById("g").innerHTML=dealerCard();
   document.getElementById("h").innerHTML=dealerHand;
-  if(dealerHand<18){
+  while(dealerHand<score){
   document.getElementById("h").innerHTML=dealerCard();
   document.getElementById("k").innerHTML= dealerHand;}
-  if(dealerHand<19){
-  document.getElementById("k").innerHTML=dealerCard();
-  document.getElementById("n").innerHTML= dealerHand;}
-  if(dealerHand<score){
-  document.getElementById("n").innerHTML=dealerCard();
-  document.getElementById("nm").innerHTML= dealerHand;}
+  if(dealerHand===score){alert("Dealer wins in a draw!"); return;}
+  if(dealerHand==21){alert("Dealer wins with 21!"); return;}
   if(dealerHand>21){alert("Dealer busted! You win!"); return;}
+  if(dealerHand>=score){alert("Dealer wins this round!"); return;}
   if(dealerHand==21){alert("Dealer wins with 21!"); return;}
   return compare();
 }
 
 function compare(){
-if(dealerHand>=score){alert("Dealer wins this round!");}
-else if(dealerHand<score){alert("You win!");}
-else return alert("You win!");
+if(dealerHand<score){alert("You win!");}
+else return alert("Bruh.");
 }
 
 </script>
