@@ -4,41 +4,71 @@
 *{margin: 0;padding: 0;}
 body{background: #544; 
   background: linear-gradient(#569, #600);
-  padding-bottom:25%;
+  padding-bottom:10%;
   font: 18px montserrat;
   }
-h1{text-align:center; font-size:72px;color:#249;padding-top:10px;text-shadow:1px 1px 3px #000;}
-#buttons{text-align:center;padding-top:5%;padding-bottom:5%;}
+h1{text-align:center; 
+  font-size:72px;
+  color:#249;
+  padding-top:10px;
+  text-shadow:1px 1px 3px #000; 
+  word-spacing: 10px;
+}
+#buttons{
+  text-align:center;
+  padding-top:5%;
+}
 
-#play,#hit,#stand{border:1px solid blue; padding:10px;color:#369;background-color:#FAFAFA;}
+#play,#hit,#stand{
+  border:1px solid #249;
+  padding:10px 15px;
+  color:#DDD;
+  font-size:18px;
+  background-color:#249;
+  box-shadow:1px 1px 3px #000;
+}
 
-#player{background-color:#006400;box-shadow:1px 1px 3px #000;border:1px solid;padding:3%;margin-bottom:5%;}
-#dealer{background-color:#006400;border:1px solid;padding:3%;}
-p{display:inline-flex;margin-left:10%;}
+#play,#hit{margin-right:20px;}
+
+#player{
+  background-color:#006400;
+  box-shadow:1px 1px 3px #000;
+  height:150px;
+  margin: 5% 15%;
+}
+#player p,#dealer p{padding-left:-10px;}
+#dealer{
+  background-color:#006400;
+  border:1px solid;
+  height:150px;
+  margin: 0% 15%;
+}
+p{
+  margin-top:5%;
+  display:inline-flex;
+  margin-left:5%;
+}
+#reset{
+  position:fixed;
+  margin-left:45%;
+  margin-top:1%;
+  box-shadow:1px 1px 3px #000;
+}
 </style>
 <body>
-<h1>MY BLACK JACK GAME! </h1>
+<h1>WELCOME TO TWENTY-ONE</h1>
 <div id="buttons">
 <input type=button id="play" value="Play!">
 <input type=button id="hit" value="Hit">
 <input type=button id="stand" value="Stand">
 </div>
+<div id="reset" value="Play again?"></div>
 <div id="player">
-<p id="a"></p>
-<p id="b"></p>
-<p id="c"></p>
 <p id="d"></p>
-<p id="e"></p>
 </div>
 <br>
 <div id="dealer">
-<p id="f"></p>
-<p id="g"></p>
-<p id="h"></p>
 <p id="j"></p>
-<p id="k"></p>
-<p id="n"></p>
-<p id="nm"></p>
 </div>
 
 
@@ -59,20 +89,22 @@ function draw(){
   y=p(13);
   return y;
 }
+
 function suit(){
   var y=p(4);switch (y){
-  case 1: return "\u2666";break;
-  case 2: return "\u2663"; break;
-  case 3: return "\u2660"; break;
-  case 4: return "\u2665"; break;
+    case 1: return "\u2660"; break;
+  case 2: return "\u2661"; break;
+  case 3: return "\u2662"; break;
+  case 4: return "\u2663"; break;
     } 
   return;
 }
+
 function kind(w){
-  if(w==1)return "Ace";
-    if(w==11)return "Jack";
-    if(w==12)return "Queen";
-  if(w==13)return "King";
+  if(w==1)return "A ";
+    if(w==11)return "J ";
+    if(w==12)return "Q ";
+  if(w==13)return "K ";
   return "" + w;
   }
 
@@ -93,30 +125,33 @@ function game(){
   return (kind(y))+ ' ' +suit();
 }
 
+function cardTo(){
+  var newNode = document.createElement('p');
+            newNode.innerHTML = game();
+            newNode.style.background="white";
+            newNode.style.border="1px solid black";
+            newNode.style.padding="15px 15px";
+            document.getElementById('player').appendChild(newNode);
+}
+
 //play
 document.getElementById("play").addEventListener("click", function(){
-    document.getElementById("a").innerHTML=game();
-    document.getElementById("a").style.background="white";
-    document.getElementById("a").style.border="1px solid black";
-    document.getElementById("a").style.padding="15px 15px";
-    document.getElementById("b").innerHTML=game();
-    document.getElementById("b").style.background="white";
-    document.getElementById("b").style.border="1px solid black";
-    document.getElementById("b").style.padding="15px 15px";
+    cardTo();
+    cardTo();
     document.getElementById("d").innerHTML="Current score: "+score;
     document.getElementById("d").style.color="white";
+    return disable();
 });
 
-
+function disable() {
+    document.getElementById("play").disabled = 'true';
+}
 
 //hit
 document.getElementById("hit").addEventListener("click", function(){
-  document.getElementById("c").innerHTML=game();
-    document.getElementById("c").style.background="white";
-    document.getElementById("c").style.border="1px solid black";
-    document.getElementById("c").style.padding="15px 15px";
+  cardTo();
   document.getElementById("d").innerHTML="Updated score: "+score;
-  if(score>21 && aces==0){alert("You busted!"); return;}
+  if(score>21 && aces==0){alert("You busted!"); return pA();}
 });
 
 //stand
@@ -138,36 +173,37 @@ function dealerCard(){
 }
 
 function dealer(){
-  document.getElementById("f").innerHTML=dealerCard();
-    document.getElementById("f").style.background="white";
-    document.getElementById("f").style.border="1px solid black";
-    document.getElementById("f").style.padding="15px 15px";
-  document.getElementById("g").innerHTML=dealerCard(); 
-    document.getElementById("g").style.background="white";
-    document.getElementById("g").style.border="1px solid black";
-    document.getElementById("g").style.padding="15px 15px";
-  document.getElementById("h").innerHTML= "Dealer's total: " +dealerHand;
-  document.getElementById("h").style.color="#000";
   while(dealerHand<score){
-  document.getElementById("h").innerHTML=dealerCard();
-    document.getElementById("h").style.background="white";
-    document.getElementById("h").style.border="1px solid black";
-    document.getElementById("h").style.padding="15px 15px";
+  (function(){   
+            var newNode = document.createElement('p');
+            newNode.innerHTML = dealerCard();
+            newNode.style.background="white";
+            newNode.style.border="1px solid black";
+            newNode.style.padding="15px 15px";
+            document.getElementById('dealer').appendChild(newNode);           
+        })();}
   document.getElementById("j").innerHTML= "Dealer's total: " +dealerHand;
-  document.getElementById("j").style.color="white";}
-  if(dealerHand===score){alert("Dealer wins in a draw!"); return;}
-  if(dealerHand==21){alert("Dealer wins with 21!"); return;}
-  if(dealerHand>21 && dealerAces==0){alert("Dealer busted! You win!"); return;}
-  if(dealerHand>=score){alert("Dealer wins this round!"); return;}
-  if(dealerHand==21){alert("Dealer wins with 21!"); return;}
+  document.getElementById("j").style.color="white";
+  if(dealerHand===score){alert("Dealer wins in a draw!"); return pA();}
+  if(dealerHand===21){alert("Dealer wins with 21!"); return pA();}
+  if(dealerHand>21 && dealerAces==0){alert("Dealer busted! You win!"); return pA();}
+  if(dealerHand>=score){alert("Dealer wins this round!"); return pA();}
   return compare();
 }
 
 function compare(){
 if(dealerHand<score){alert("You win!");}
-else return alert("Bruh.");
+else return pA();
 }
 
-</script>
+function pA(){
+     document.getElementById("reset").innerHTML = '<input type=button id="pa" value="Play again?">';
+     document.getElementById("pa").style.border="1px solid #249";
+     document.getElementById("pa").style.background="#249";
+     document.getElementById('pa').style.color= '#DDD';
+     document.getElementById('pa').style.padding= '10px 15px';
+     document.getElementById('pa').style.font= '18px arial';
+     document.getElementById("pa").addEventListener("click",function(){return document.location.reload();});
+}
 
 </script>
