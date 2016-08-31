@@ -244,7 +244,7 @@ function check(){
   moon.style.visibility="visible";
   sun.style.visibility="hidden";
   cloud.style.visibility="hidden";
-  rain.style.visibility="hideen";
+  rain.style.visibility="hidden";
   };
   if(diff>0){
   document.body.style.background="#249";
@@ -257,7 +257,7 @@ function check(){
     cloud.style.visibility="visible";
     cloud.style.margin="3%";
   }
-  if(des=="light rain"||des=="mist"||des=="rain"||des=="light intensity drizzle"){
+  if(des=="light rain"||des=="mist"||des=="rain"||des=="light intensity drizzle"||des=="heavy intensity rain"){
   sun.style.visibility="hidden";
   cloud.style.visibility="visible";
   rain.style.visibility="visible";
