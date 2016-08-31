@@ -35,7 +35,7 @@ border-radius:50%;}
   height:50px;
   width:50px;
   animation-name: shine;
-  animation-duration: 24s;
+  animation-duration: 14s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
   z-index:-1;
@@ -46,7 +46,7 @@ border-radius:50%;}
   height:50px;
   width:50px;
   animation-name: shine;
-  animation-duration: 22s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
   z-index:-1;
@@ -57,7 +57,18 @@ border-radius:50%;}
   height:50px;
   width:50px;
   animation-name: shine;
-  animation-duration: 14s;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index:-1;
+}
+#ray3{
+  position:relative;
+  background-color:orange;
+  height:50px;
+  width:50px;
+  animation-name: shine;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   z-index:-1;
@@ -112,12 +123,96 @@ border-radius:50%;}
 }
 #w{padding-top:10%;}
 #all{margin-left:48%;margin-right:48%;margin-top:4%;}
+#cloud{
+  background:#DADADA;
+  width:30px;
+  height:20px;
+  padding:1%;
+  margin-top:10px;
+  margin-left:13px;
+  border-top-right-radius:50%;
+  border-top-left-radius:100%;
+  border-bottom-right-radius:100%;
+  border-bottom-left-radius:60%;
+  position:absolute;
+  animation-name:float;
+  animation-duration:5s;
+  animation-iteration-count:infinite;
+  animation-timing-function: ease;
+}
+#cloud1{
+  z-index:-1;
+  position:relative;
+  background:#DFDFDF;
+  width:70px;
+  height:30px;
+  padding:1%;
+  margin-left:-4px;
+  margin-top:3px;
+  border-top-right-radius:40%;
+  border-top-left-radius:70%;
+  border-bottom-right-radius:60%;
+  border-bottom-left-radius:30%;
+}
+#cloud2{
+  position:relative;
+  background:#DEDEDE;
+  width:55px;
+  height:50px;
+  padding:1%;
+  margin-left:5px;
+  margin-top:-24px;
+  border-top-right-radius:100%;
+  border-top-left-radius:100%;
+  border-bottom-right-radius:100%;
+  border-bottom-left-radius:70%;
+}
+@keyframes float{
+  0%{margin-left:-.5%;}
+  25%{margin-left:0;}
+  50%{margin-left:.5%;}
+  75%{margin-left:0;}
+  100%{margin-left:-.5%;}
+}
+#rain{
+  position:relative;
+  z-index:-1;
+  border-left:2px dotted #44F;
+  border-right:2px dotted #44F;
+  height:10px;
+  width:20px;
+  margin-top:45px;
+  transform:rotate(20deg);
+  padding-top:50px;
+  transitionY:5px;
+  animation-name:drip;
+  animation-duration:3s;
+  animation-iteration-count:infinite;
+  animation-timing-function: ease;
+}
+#rain1{
+  border-left:2px dotted #44F;
+  border-right:2px dotted #44F;
+  height:5px;
+  width:20px;
+  margin-top:-55px;
+  margin-left:10px;
+  padding-top:50px;
+  transitionY:5px;
+}
+@keyframes drip{
+  0%{margin-top:75%;}
+  25%{margin-top:70%;}
+  50%{margin-top:75%;}
+  75%{margin-top:70%;}
+  100%{margin-top:75%;}
+}
 </style>
 <body>
 <h1 id="city"></h1>
 <div id="all">
 <div id="moon"><div id="crater"></div><div id="star1"></div><div id="star2"></div><div id="star3"></div></div>
-<div id="sun"><div id="ray"><div id="ray1"><div id="ray2"></div></div></div></div>
+<div id="sun"><div id="ray"><div id="ray1"><div id="ray2"><div id="ray3"></div></div></div></div></div><div id="cloud"><div id="cloud1"><div id="cloud2"><div id="rain"><div id="rain1"></div></div></div></div></div>
 </div>
 <div id="w"></div>
 <p id='t'></p>
@@ -128,7 +223,7 @@ border-radius:50%;}
 function ajaxCall(){
 var loc=prompt("Name your city");
 var weather = new XMLHttpRequest();
-weather.open("GET","http://api.openweathermap.org/data/2.5/weather?q=" + loc + ",us&appid=002c514b7cc57302b542830301bf1422",false);
+weather.open("GET","http://api.openweathermap.org/data/2.5/weather?q=" + loc + "&appid=002c514b7cc57302b542830301bf1422",false);
 weather.send(null);
 var r=JSON.parse(weather.response);
 var des= r.weather[0].description;
@@ -138,7 +233,7 @@ var hU=r.main.humidity;
 var city=r.name;
 var sRise=r.sys.sunrise;
 var sSet=r.sys.sunset;
-var diff=sRise-sSet;
+var diff=sSet-sRise;
 var temp=document.getElementById("t");
 temp.innerHTML=tF;
 document.getElementById("w").innerHTML=des;
@@ -146,16 +241,26 @@ document.getElementById("hU").innerHTML="Humidity: " + hU +"%";
 document.getElementById("city").innerHTML=city;
 
 function check(){
-  var moon=document.getElementById("moon");
-  var sun=document.getElementById("sun");
   if(diff<=0){
   moon.style.visibility="visible";
   sun.style.visibility="hidden";
+  cloud.style.visibility="hidden";
+  rain.style.visibility="hideen";
   };
   if(diff>0){
   document.body.style.background="#249";
   moon.style.visibility="hidden";
   sun.style.visibility="visible";
+  cloud.style.visibility="hidden";
+  rain.style.visibility="hidden";
+  }
+  if(des=="broken clouds"||des=="scattered clouds"||des=="overcast clouds"){
+    cloud.style.visibility="visible";
+  }
+  if(des=="light rain"||des=="mist"||des=="rain"){
+  sun.style.visibility="hidden";
+  cloud.style.visibility="visible";
+  rain.style.visibility="visible";
   }
 }
 
