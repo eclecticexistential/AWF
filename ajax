@@ -124,12 +124,11 @@ border-radius:50%;}
 #w{padding-top:10%;}
 #all{margin-left:48%;margin-right:48%;margin-top:4%;}
 #cloud{
+z-index:1;
   background:#DADADA;
   width:30px;
   height:20px;
   padding:1%;
-  margin-top:10px;
-  margin-left:13px;
   border-top-right-radius:50%;
   border-top-left-radius:100%;
   border-bottom-right-radius:100%;
@@ -168,11 +167,11 @@ border-radius:50%;}
   border-bottom-left-radius:70%;
 }
 @keyframes float{
-  0%{margin-left:-.5%;}
-  25%{margin-left:0;}
-  50%{margin-left:.5%;}
-  75%{margin-left:0;}
-  100%{margin-left:-.5%;}
+  0%{margin-left:-1%;}
+  25%{margin-left:-1.5%;}
+  50%{margin-left:-1.75%;}
+  75%{margin-left:-1.5%;}
+  100%{margin-left:-1%;}
 }
 #rain{
   position:relative;
@@ -256,8 +255,9 @@ function check(){
   }
   if(des=="broken clouds"||des=="scattered clouds"||des=="overcast clouds"){
     cloud.style.visibility="visible";
+    cloud.style.margin="3%";
   }
-  if(des=="light rain"||des=="mist"||des=="rain"){
+  if(des=="light rain"||des=="mist"||des=="rain"||des=="light intensity drizzle"){
   sun.style.visibility="hidden";
   cloud.style.visibility="visible";
   rain.style.visibility="visible";
