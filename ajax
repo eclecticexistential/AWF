@@ -8,111 +8,91 @@ Weather Report
 
 h1{font:54px arial;}
 
-body{background:black;color:white;text-align:center;font:24px montserrat;color:#735DB5;text-shadow:1px 1px 3px #000;}
+body{background:black;color:white;text-align:center;
+  font:24px arial;color:#735DB5;text-shadow:1px 1px 3px #000;}
 #moon{background-color:white;
   height:50px;
   width:50px;
-  border-radius:50%;
   position:absolute;
 }
 #crater{background: rgba(0,0,0,0.05);
   position:relative;
-height:30px;
-width:30px;
+  height:30px;
+  width:30px;
   margin-left:20px;
   margin-top:15px;
-border-radius:50%;}
+}
+#moon,#crater,#sun{
+  border-radius:50%;
+}
 #sun{
   background-color:yellow;
   height:50px;
   width:50px;
-  border-radius:50%;
   position:absolute;
 }
-#ray{
+#ray,#ray1,#ray2,#ray3{
   position:relative;
   background-color:orange;
   height:50px;
   width:50px;
   animation-name: shine;
-  animation-duration: 14s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-out;
   z-index:-1;
+}
+#ray{
+  animation-duration: 14s;
+  animation-timing-function: ease-out;
 }
 #ray1{
-  position:relative;
-  background-color:orange;
-  height:50px;
-  width:50px;
-  animation-name: shine;
   animation-duration: 12s;
-  animation-iteration-count: infinite;
   animation-timing-function: ease-in;
-  z-index:-1;
 }
 #ray2{
-  position:relative;
-  background-color:orange;
-  height:50px;
-  width:50px;
-  animation-name: shine;
   animation-duration: 8s;
-  animation-iteration-count: infinite;
   animation-timing-function: linear;
-  z-index:-1;
 }
 #ray3{
-  position:relative;
-  background-color:orange;
-  height:50px;
-  width:50px;
-  animation-name: shine;
   animation-duration: 4s;
-  animation-iteration-count: infinite;
   animation-timing-function: linear;
-  z-index:-1;
 }
 @keyframes shine{
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
 }
 
+#star1,#star2,#star3,#star4,#star5{
+  position:relative;
+  background-color:white;
+  height:1px;
+  width: 1px;
+  animation-name:sparkle;
+  animation-iteration-count:infinite;
+  animation-timing-function: ease;
+}
 
 #star1{
-  position:relative;
-  background-color:white;
-  height:1px;
-  width: 1px;
   margin-left:-4%;
-  animation-name:sparkle;
   animation-duration: 5s;
-  animation-iteration-count:infinite;
-  animation-timing-function: ease;
 }
 #star2{
-  position:relative;
-  background-color:white;
-  height:1px;
-  width: 1px;
   margin-left:115%;
   margin-top:-75%;
-  animation-name:sparkle;
   animation-duration: 3s;
-  animation-iteration-count:infinite;
-  animation-timing-function: ease;
 }
 #star3{
-  position:relative;
-  background-color:white;
-  height:1px;
-  width: 1px;
   margin-left:100%;
   margin-top:-40%;
-  animation-name:sparkle;
   animation-duration: 4s;
-  animation-iteration-count:infinite;
-  animation-timing-function: ease;
+}
+#star4{
+  margin-left:-7%;
+  animation-duration:2s;
+}
+#star5{
+  margin-left:-25%;
+  margin-top:20%;
+  animation-duration:1s;
 }
 @keyframes sparkle{
   0%{background-color:#DDD;}
@@ -124,7 +104,7 @@ border-radius:50%;}
 #w{padding-top:10%;}
 #all{margin-left:48%;margin-right:48%;margin-top:4%;}
 #cloud{
-z-index:1;
+  z-index:1;
   background:#DADADA;
   width:30px;
   height:20px;
@@ -206,38 +186,110 @@ z-index:1;
   75%{margin-top:70%;}
   100%{margin-top:75%;}
 }
+
+#bolts{margin-top:-240%;}
+#bolt{
+  transform:rotate(50deg);
+  border-top-right-radius:100%; 
+position:absolute;}
+#bolt,#bolt1,#bolt2{
+  background:yellow;
+  height:15px;
+  width:10px;
+  padding:2px;
+  animation-name:strike;
+  animation-duration:3s;
+  animation-iteration-count:infinite;
+  animation-timing-function: ease;
+}
+#bolt1,#bolt2{
+  margin-left:7px;
+  margin-top:7px;
+}
+#bolt2{
+  border-bottom-left-radius:100%;
+}
+@keyframes strike{
+  0%{background-color:#FEFE2D;}
+  25%{background-color:#FFFF51;}
+  50%{background-color:#FFFF75;}
+  75%{background-color:#FFFFA1;}
+  100%{background-color:#FFF;}
+}
+}
 </style>
 <body>
 <h1 id="city"></h1>
 <div id="all">
-<div id="moon"><div id="crater"></div><div id="star1"></div><div id="star2"></div><div id="star3"></div></div>
-<div id="sun"><div id="ray"><div id="ray1"><div id="ray2"><div id="ray3"></div></div></div></div></div><div id="cloud"><div id="cloud1"><div id="cloud2"><div id="rain"><div id="rain1"></div></div></div></div></div>
+<div id="moon">
+  <div id="crater"></div>
+  <div id="star1"></div>
+  <div id="star2"></div>
+  <div id="star3"></div>
+  <div id="star4"></div>
+  <div id="star5"></div>
+</div>
+<div id="sun">
+  <div id="ray">
+    <div id="ray1">
+      <div id="ray2">
+        <div id="ray3">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <div id="cloud">
+          <div id="cloud1">
+            <div id="cloud2">
+              <div id="rain">
+                <div id="rain1">
+                  <div id="bolts">
+                  <div id="bolt">
+                    <div id="bolt1">
+                      <div id="bolt2">
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
 <div id="w"></div>
-<p id='t'></p>
-<p id='hU'></p>
-<p id='til'></p>
+  <p id='t'></p>
+    <p id='hU'></p>
+      <p id='til'></p>
 </body>
 <script>
 function ajaxCall(){
-var loc=prompt("Name your city");
-var weather = new XMLHttpRequest();
-weather.open("GET","http://api.openweathermap.org/data/2.5/weather?q=" + loc + "&appid=002c514b7cc57302b542830301bf1422",false);
-weather.send(null);
-var r=JSON.parse(weather.response);
-var des= r.weather[0].description;
-var tC=(Math.floor(r.main.temp-273.15))+ "\u00B0" + "C";
-var tF=(Math.floor((r.main.temp * (9/5))- 459.67))+ "\u00B0" + "F";
-var hU=r.main.humidity;
-var city=r.name;
-var sRise=r.sys.sunrise;
-var sSet=r.sys.sunset;
-var diff=sSet-sRise;
-var temp=document.getElementById("t");
-temp.innerHTML=tF;
-document.getElementById("w").innerHTML=des;
-document.getElementById("hU").innerHTML="Humidity: " + hU +"%";
-document.getElementById("city").innerHTML=city;
+  var loc=prompt("Name your city");
+  var weather = new XMLHttpRequest();
+      weather.open("GET","http://api.openweathermap.org/data/2.5/weather?q=" + loc + "&appid=002c514b7cc57302b542830301bf1422",false);
+      weather.send(null);
+  var r=JSON.parse(weather.response);
+  var des= r.weather[0].description;
+  var tC=(Math.floor(r.main.temp-273.15))+ "\u00B0" + "C";
+  var tF=(Math.floor((r.main.temp * (9/5))- 459.67))+ "\u00B0" + "F";
+  var hU=r.main.humidity;
+  var city=r.name;
+  var sRise=r.sys.sunrise;
+  var sSet=r.sys.sunset;
+  var dT=r.dt;
+  var diff=dT-sRise;
+  var temp=document.getElementById("t");
+          temp.innerHTML=tF;
+          temp.addEventListener("click",function(){
+          if(temp.innerHTML=tF){return temp.innerHTML=tC;};
+          });
+          temp.addEventListener("mousedown",function(){
+            if(temp.innerHTML=tC){return temp.innerHTML=tF;};
+          });
+  document.getElementById("w").innerHTML=des;
+  document.getElementById("hU").innerHTML="Humidity: " + hU +"%";
+  document.getElementById("city").innerHTML=city;
 
 function check(){
   if(diff<=0){
@@ -245,6 +297,7 @@ function check(){
   sun.style.visibility="hidden";
   cloud.style.visibility="hidden";
   rain.style.visibility="hidden";
+  bolt.style.visibility="hidden";
   };
   if(diff>0){
   document.body.style.background="#249";
@@ -252,8 +305,9 @@ function check(){
   sun.style.visibility="visible";
   cloud.style.visibility="hidden";
   rain.style.visibility="hidden";
+  bolt.style.visibility="hidden";
   }
-  if(des=="broken clouds"||des=="scattered clouds"||des=="overcast clouds"){
+  if(des=="broken clouds"||des=="scattered clouds"||des=="overcast clouds"||des=="few clouds"){
     cloud.style.visibility="visible";
     cloud.style.margin="3%";
   }
@@ -262,17 +316,15 @@ function check(){
   cloud.style.visibility="visible";
   rain.style.visibility="visible";
   }
+  if(des=="thunderstorm"){
+    sun.style.visibility="hidden";
+    cloud.style.visibility="visible";
+    rain.style.visibility="visible";
+    bolt.style.visibility="visible";
+  }
 }
-
 check();
-
-temp.addEventListener("click",function(){
-if(temp.innerHTML=tF){return temp.innerHTML=tC;};
-});
-temp.addEventListener("mousedown",function(){
-  if(temp.innerHTML=tC){return temp.innerHTML=tF;};
-});
 }
-
+//closure of ajaxCall();
 ajaxCall();
 </script>
