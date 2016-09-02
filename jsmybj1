@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
 <style>
 *{margin: 0;padding: 0;}
-body{background: #544; 
+ body{background: #544; 
   background: linear-gradient(#569, #600);
   padding-bottom:10%;
   font: 18px montserrat;
@@ -28,7 +30,7 @@ h1{text-align:center;
   box-shadow:1px 1px 3px #000;
 }
 
-#play,#hit{margin-right:20px;}
+#play,#hit{margin-right:10px;}
 
 #player{
   background-color:#006400;
@@ -36,7 +38,7 @@ h1{text-align:center;
   height:150px;
   margin: 5% 15%;
 }
-#player p,#dealer p{padding-left:-10px;}
+#player p,#dealer p{padding-left:-13px;}
 #dealer{
   background-color:#006400;
   border:1px solid;
@@ -44,35 +46,40 @@ h1{text-align:center;
   margin: 0% 15%;
 }
 p{
-  margin-top:5%;
+  margin-top:2%;
   display:inline-flex;
-  margin-left:5%;
+  margin-left:2%;
 }
 #reset{
   position:fixed;
-  margin-left:45%;
+  margin-left:39%;
   margin-top:1%;
   box-shadow:1px 1px 3px #000;
 }
 </style>
 <body>
+  <div class="container">
+    <div class="row col-m-6">
 <h1>WELCOME TO TWENTY-ONE</h1>
-<div id="buttons">
+<div id="buttons" class="col-s-6">
 <input type=button id="play" value="Play!">
 <input type=button id="hit" value="Hit">
 <input type=button id="stand" value="Stand">
 </div>
-<div id="reset" value="Play again?"></div>
-<div id="player">
-<p id="d"></p>
+<div id="reset" value="Play again?" class="col-s-6"></div>
+<div id="player" class="col-s-6">
+<p id="d" class="col-xs-3"></p>
 </div>
 <br>
-<div id="dealer">
-<p id="j"></p>
+<div id="dealer" class="col-s-6">
+<p id="j" class="col-xs-3"></p>
+</div>
+</div>
 </div>
 
 
 </body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
 
 
@@ -181,9 +188,9 @@ function dealer(){
             newNode.style.border="1px solid black";
             newNode.style.padding="15px 15px";
             document.getElementById('dealer').appendChild(newNode);           
-        })();}
+        })();
   document.getElementById("j").innerHTML= "Dealer's total: " +dealerHand;
-  document.getElementById("j").style.color="white";
+  document.getElementById("j").style.color="white";}
   if(dealerHand===score){alert("Dealer wins in a draw!"); return pA();}
   if(dealerHand===21){alert("Dealer wins with 21!"); return pA();}
   if(dealerHand>21 && dealerAces==0){alert("Dealer busted! You win!"); return pA();}
